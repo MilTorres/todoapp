@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Table(name = "task") // crea la tabla en el SGBD H2 llamada task
 public class Task {
     @Id // con esta notacion marcamos que tendremos una campo llamada id
-    @GeneratedValue(strategy = GenerationType.AUTO) // crea el id auto incrementable
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // crea el id auto incrementable
 
     private Long id;
     private String titulo;
@@ -19,5 +19,5 @@ public class Task {
     private LocalDateTime fechacreacion;
     private LocalDateTime fechaestimada;
     private boolean finalizada;
-    private TaskStatus taskStatus;
+    private TaskStatus estado;
 }
