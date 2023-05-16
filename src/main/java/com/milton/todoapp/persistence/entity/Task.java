@@ -17,7 +17,7 @@ public class Task {
     private String titulo;
     private String descripcion;
     private LocalDateTime fechacreacion;
-    private LocalDateTime fechaterminada;
+    private LocalDateTime fechaestimada;
     private boolean finalizada;
     private TaskStatus taskStatus;
 }
