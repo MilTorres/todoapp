@@ -4,6 +4,7 @@ import com.milton.todoapp.persistence.entity.Task;
 import com.milton.todoapp.persistence.entity.TaskStatus;
 import com.milton.todoapp.service.TaskService;
 import com.milton.todoapp.service.dto.TaskInDTO;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,6 +41,16 @@ public class TaskController {
 
     }
 
+    @PatchMapping("/mark_finished/{id}")
+    public ResponseEntity<Void> markAsfiniched(@PathVariable("id")Long id ){
+        this.taskService.updateTaskFinich(id);
+        return ResponseEntity.noContent().build();
+    }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable("id")Long id ){
+        this.taskService.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 
 }
